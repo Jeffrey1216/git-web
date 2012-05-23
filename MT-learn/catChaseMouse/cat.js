@@ -33,7 +33,7 @@ $(document).ready(function(){
  new Mouse('mouse');
  var temp = 0;
  //$('body').everyTime('200ms',test);
- $('body').everyTime('1s',test);
+ $('body').everyTime('200ms',test);
 
  /*($('body').everyTime('1s','C',function(){
     //执行一个会超过20秒以上的程式
