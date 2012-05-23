@@ -1,0 +1,84 @@
+<script src="http://192.168.1.222/viewgis/Js/mootools-core-1.4.1-server.js"></script>
+<script>
+	var XLamp = new Class({
+		name : ''
+		,state: false
+		,initialize : function(name){
+			this.name = name;
+		}
+		,powerOn: function(){
+			this.state= true;
+			console.log(this.name + '¡¡¡À');
+		}
+		,powerOff : function(){
+			this.state= false;
+			console.log(this.name + '√¡À');
+		}
+		,isOn: function(){
+			return this.state;
+		}
+		,switchState : function(){
+			if(this.isOn()){
+				this.powerOff();
+			}else{
+				this.powerOn();
+			}
+		}
+
+	});
+
+	var XPullSwitch = new Class({
+		Extends : XLamp
+		,pull : function(){
+			this.switchState();
+		}
+	});
+
+	var SoundSwitch = new Class({
+		Extends : XLamp
+		,clapHands : function(){
+			this.switchState();
+		}
+	});
+
+	var a = new XPullSwitch('A');
+	var b = new SoundSwitch('B');
+	a.pull();
+	a.pull();
+	b.clapHands();
+	b.clapHands();
+	b.clapHands();
+	b.clapHands();
+	b.clapHands();
+	b.clapHands();
+	b.clapHands();
+	b.clapHands();
+	b.clapHands();
+	b.clapHands();
+	b.clapHands();
+	b.clapHands();
+	b.clapHands();
+	b.clapHands();
+	b.clapHands();
+	b.clapHands();
+	b.clapHands();
+	b.clapHands();
+	b.clapHands();
+	b.clapHands();
+	b.clapHands();
+	b.clapHands();
+	var c =new SoundSwitch('C');
+	c.clapHands();
+	c.clapHands();
+	c.clapHands();
+	c.clapHands();
+	c.clapHands();
+	c.clapHands();
+	c.clapHands();
+	c.clapHands();
+	c.clapHands();
+	c.clapHands();
+	c.clapHands();
+	c.clapHands();
+	c.clapHands();
+</script>

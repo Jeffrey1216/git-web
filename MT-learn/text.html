@@ -1,0 +1,81 @@
+<script src="http://192.168.1.222/viewgis/Js/mootools-core-1.4.1-server.js"></script>
+<script>
+    var Teacher = new Class({
+        Extends : Events
+        ,classover : function(){
+            this.fireEvent('ring');
+        }
+    });
+    var Student = new Class({
+        name : ''
+	,age : 0
+	,sex : 'ÄÐ'
+	,initialize : function(n,age,sex){
+		this.name = n;
+		this.age = age;
+		this.sex = sex || this.sex;
+	}
+        ,listenTecher : function(ter){
+            ter.addEvent('ring',this.My.bind(this));
+        }
+        ,My : function(){
+            
+        }
+	,echo : function(todo){
+            console.log(this.name + this.age + this.sex + todo);
+	}
+    });
+
+    var LikeGame = new Class({
+        Extends : Student
+        ,My : function(){
+		this.echo('ÍæÓÎÏ·');
+        }
+    });
+    var Dance = new Class({
+	Extends : Student
+	,My : function(){
+		this.echo('ÌøÎè');
+	}
+    });
+    var GoodGuy =  new Class({
+        Extends : Student
+        ,My : function(){
+		this.echo('»Ø¼Ò');
+        }
+    });
+    var Learn = new Class({
+	Extends : Student
+	,My : function(){
+		this.echo('²¹Ï°');
+	}
+    });
+
+function echo(msg){
+	console.log(msg);
+}
+
+    var jackwang = new Teacher();
+    
+    var beibei = new LikeGame('±´±´',12);
+    beibei.listenTecher(jackwang);
+
+    var morgan = new GoodGuy('¸£¸£',13);
+    morgan.listenTecher(jackwang);
+
+
+    var ClassOne = [];
+    var dasiy = new Learn();
+    ClassOne.push(daisy);
+    ClassOne.push(daisy);
+    ClassOne.push(daisy);
+    ClassOne.push(daisy);
+   for(var i=0; )
+
+    var i = 1000;
+    while(i > 1){
+        --i;
+    } 
+
+    jackwang.classover();
+</script>
