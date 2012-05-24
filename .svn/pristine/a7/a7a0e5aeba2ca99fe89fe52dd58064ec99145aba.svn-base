@@ -1,0 +1,108 @@
+<script src="../js/mootools-core-1.4.5.js"></script>
+<script>
+	var XLamp = new Class({
+		name : ''
+		,state: false
+		,initialize : function(name){
+			this.name = name;
+		}
+		,powerOn: function(){
+			this.state= true;
+			console.log(this.name + '亮了o');
+		}
+		,powerOff : function(){
+			this.state= false;
+			console.log(this.name + '灭了');
+		}
+		,isOn: function(){
+			return this.state;
+		}
+		,switchState : function(){
+			if(this.isOn()){
+				this.powerOff();
+			}else{
+				this.powerOn();
+			}
+		}
+
+	});
+
+	var XPullSwitch = new Class({
+		Extends : XLamp
+		,pull : function(){
+			this.switchState();
+		}
+	});
+
+	var SoundSwitch = new Class({
+		Extends : XLamp
+		,clapHands : function(){
+			this.switchState();
+		}
+	});
+
+	
+	var MutilSwitch = new Class({
+		Extends : XLamp,
+		upStairs : function(){
+			this.switchState();
+		},
+		medile : function(){
+			if(this.isOn()){
+				this.powerOff();
+			}else{
+				console.log('没有改变哦');
+			}
+		},
+		downStairs : function(){
+			this.switchState();
+		}
+	});
+
+	var m = new MutilSwitch('M');
+
+        //
+	var a = new XPullSwitch('A');
+	var b = new SoundSwitch('B');
+        // a.pull();
+	// b.clapHands();
+
+	m.upStairs();  //liang
+	m.upStairs();  //c
+	m.downStairs(); //l
+	m.medile();     //c
+	m.medile();   ///c
+	m.medile();   ///c
+	m.medile();   ///c
+	m.upStairs();  
+	m.downStairs(); 
+	m.upStairs();  
+	m.medile();   //c
+	m.medile();   //c
+	m.upStairs();  //l
+	m.medile();   //c
+	m.upStairs();  //l
+	m.downStairs(); //c
+	m.medile();      //c
+	m.downStairs(); //l
+	m.medile();
+	m.upStairs();  
+	m.downStairs(); 
+	m.medile();
+	m.upStairs();  
+	m.medile();
+	m.medile();
+	m.downStairs(); 
+	m.medile();
+	m.downStairs(); 
+	m.medile();
+	m.upStairs();  
+	m.medile();
+	m.medile();
+	m.downStairs(); 
+	m.medile();
+	m.upStairs();  
+	m.downStairs(); //liang
+	m.medile();
+	
+</script>

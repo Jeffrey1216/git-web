@@ -1,0 +1,27 @@
+
+<html>
+<head>
+<script src="../js/mootools-core-1.4.5.js"></script>
+<script src="../js/Jquery-1.6.4.js"></script>
+<script>
+
+var Animal = new Class({
+    initialize: function(age){
+        this.age = age + 100;
+    }
+});
+var Cat = new Class({
+    Implements: Animal,
+    setName: function(name,aj){
+        this.name = name;
+        //this.age  = aj;
+    }
+});
+var myAnimal = new Cat(20);
+myAnimal.setName('Micia',13);
+alert(myAnimal.name); //œ‘ æ 'Micia'.
+alert(myAnimal.age);    
+
+</script>
+
+</html>

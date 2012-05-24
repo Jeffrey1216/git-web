@@ -1,0 +1,28 @@
+<html>
+<head>
+<script src="../js/mootools-core-1.4.5.js"></script>
+<script src="../js/Jquery-1.6.4.js"></script>
+<script src="./consoleLight.js"></script>
+</head>
+<body>
+	<div>
+		<dl>
+			<dd><select name ="lightType" id= "lightID"><option value="pull">pull</option><option value="sound">sound</option></select></dd>
+		</dl>
+		<dl>
+			<dd id="Buttons">
+				<input type="button" name = "sub" id = "sub" value="commit"> &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type ="button" name ="addLight" id ="addLight" value="add a Light">&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<!--
+				<input type ="button" name ="turnOnAll" id ="turnOnAll" value="turn on All">&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type ="button" name ="turnOnAll" id ="turnOffAll" value="turn on All">&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				-->
+			</dd>
+		</dl>
+	</div>
+	<div id="nimei">
+		<p> light! </p>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<script>
+/*var lists = [];
+function signUp(type,callNumber){
+	if(list[type] && list[callNumber]){
+		console.log('ÄãÒÑ¾­µÇ¼Ç');
+	}else{
+		list.[] = type;
+		list.[type][] = callNumber;
+	}
+}
+
+function notify(type){
+	if(list[type]){
+		for(i=0;i<list[type].length;i++){
+			call(list[type][i]);
+		}
+	}
+}
+
+signUp(1,121);
+signUp(1.222);
+
+notify(1);
+*/
+//=======================================================
+var CallWidget = new Class({
+	$widgetList : {},
+	Extends:Events,
+	newCall : function(){
+		this.firstEvent('call');
+	}
+});
+var CreateWidget = new Class({
+	name : '',
+	wwith : '200',
+	wheight : '200',
+	content :  '',
+	initialize : function (n,w,h,c){
+		this.name = n || this.name;
+		this.wwith = w || this.wwith;
+		this.wheight = h || this.wheight;
+		this.content = c || this.content;
+		
+	}
+
+});
+
+
+</script>

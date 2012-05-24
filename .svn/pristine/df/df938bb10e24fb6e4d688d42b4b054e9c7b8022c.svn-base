@@ -1,0 +1,154 @@
+<script src="http://192.168.1.222/viewgis/Js/mootools-core-1.4.1-server.js"></script>
+<script>
+   var MyEvents = new Class({
+	   $callbacks : {}
+	   , notice: function(name){
+		var cs = this.$callbacks[name];
+		if(cs){
+			for(var i =0; i< cs.length; ++i){
+				cs[i]();
+			}
+		}
+	   }
+	   ,signUp: function(name,callback){
+		 if(this.$callbacks[name] == undefined){
+			this.$callbacks[name] =[];
+		 }
+		 this.$callbacks[name].push(callback);
+	   }
+   });
+
+   var tech = new MyEvents();
+   tech.singUp('2',function(){
+	   console.log('morgan');
+   });
+
+tech.signUp('4',function(){
+	console.log('daisy');
+});
+
+tech.signUp('2',function(){
+	console.log('aglagj');
+});
+
+
+
+tech.notice('2');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    var Teacher = new Class({
+        Extends : MyEvents 
+        ,classover : function(){
+            this.fireEvent('come');
+            this.fireEvent('leave');
+        }
+    });
+    var Student = new Class({
+        name : ''
+	,age : 0
+	,sex : '男'
+	,initialize : function(n,age,sex){
+		this.name = n;
+		this.age = age;
+		this.sex = sex;
+	}
+        ,listenTecher : function(ter){
+            ter.addEvent('come',this.My.bind(this));
+	    
+        }
+        ,My : function(){
+            
+        }
+	,echo : function(todo){
+            console.log(this.name + this.age + this.sex + todo);
+	}
+    });
+
+    var LikeGame = new Class({
+        Extends : Student
+        ,My : function(){
+		this.echo('玩游戏');
+        }
+    });
+
+    var GoodGuy =  new Class({
+        Extends : Student
+        ,My : function(){
+		this.echo('回家');
+        }
+    });
+    var Learn = new Class({
+	Extends : Student
+	,My : function(){
+		this.echo('补习');
+	}
+    });
+
+function echo(msg){
+	console.log(msg);
+}
+
+    var jackwang = new Teacher();
+    
+    var beibei = new LikeGame('贝贝',12);
+    beibei.listenTecher(jackwang);
+
+    var morgan = new GoodGuy('福福',13);
+    morgan.listenTecher(jackwang);
+
+
+
+//==========================
+   
+   function morgan(n,c){
+	if(c==1){
+	    var inf = n + "回家了";
+	    echo(inf);
+        }else if(c == 2){
+	    var inf = n + "玩游戏了";
+	    echo(inf);
+        }else if(c==3){
+
+	}
+   }
+   function gohome(){
+
+   }
+
+    var i = 1000;
+    while(i > 1){
+        --i;
+    }
+
+    jackwang.classover();
+</script>
+
+<a id="myAnchor" href="http://google.com/">Visit Google.com</a>
+<script type="text/javascript">
+$('#myAnchor').addEvent('click', function(event){
+    event.stop(); //阻止链接的默认行为: 打开链接到google.com
+
+    this.setText("Where do you think you're going?");
+
+    //function(){
+    //    this.setText("Instead visit the Blog.").set('href', 'http://blog.mootools.net');
+    //}.delay(500, this);
+});
+</script>
